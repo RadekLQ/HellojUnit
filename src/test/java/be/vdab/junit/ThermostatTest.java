@@ -7,6 +7,10 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+
 public class ThermostatTest {
 
 //    GENESTE KLASSE HEATINGSTUB:
@@ -28,27 +32,41 @@ public class ThermostatTest {
     //setCurrentTemperature
     @Test
     public void testChangeCurrentTemperature() {
-        Assert.assertTrue(thermostat.setCurrentTemperature(0);
+        Temperature target = new Temperature(20);
+        thermostat.setTargetTemperature(target);
+
+        thermostat.setCurrentTemperature(new Temperature(19));
+        assertTrue(thermostat.isHeating());
+
+        thermostat.setCurrentTemperature(new Temperature(20));
+        assertFalse(thermostat.isHeating());
+    }
 
     @Test
     //setTargetTemperature
     public void testChangeTargetTemperature() {
 
+        Temperature target = new Temperature(20);
+        thermostat.setCurrentTemperature(target);
+
+        thermostat.setCurrentTemperature(new Temperature(19));
+        assertFalse(thermostat.isHeating());
+
+        thermostat.setTargetTemperature(new Temperature(20));
+        assertTrue(thermostat.isHeating());
+
+        thermostat.setCurrentTemperature(new Temperature(21));
+        assertFalse(thermostat.isHeating());
     }
 
     @Test
    //isHeating
     public void testHeating() {
-
     }
 
     @Test
     //evaluate
     public void testEvaluate() {
-
     }
-
-
-
 
 }
