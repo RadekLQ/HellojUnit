@@ -3,6 +3,7 @@ package be.vdab.junit;
 import be.vdab.unit.InvalidTemperatureException;
 import be.vdab.unit.Temperature;
 import org.junit.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,16 +16,16 @@ public class TemperatureTest {
         temp = new Temperature(25.4F);
     }
 
-//    @Test
-//    public void testConstructor() {
-//        Assert.assertEquals("Testing constructor", 25.4F, temp.getValue(), 0.000001);
-//    }
-//
-//    @Test
-//    public void testValue() {
-//        temp.setValue(30.5F);
-//        Assert.assertEquals("Testing setValue", 30.5F, temp.getValue(), 0.000001);
-//    }
+    @Test
+    public void testConstructor() {
+        Assert.assertEquals("Testing constructor", 25.4F, temp.getValue(), 0.000001);
+    }
+
+    @Test
+    public void testValue() {
+        temp.setValue(30.5F);
+        Assert.assertEquals("Testing setValue", 30.5F, temp.getValue(), 0.000001);
+    }
 
     @Test
     public void testBoiling() {

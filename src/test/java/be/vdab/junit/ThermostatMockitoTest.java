@@ -1,5 +1,6 @@
 package be.vdab.junit;
 
+
 import be.vdab.unit.Heating;
 import be.vdab.unit.Temperature;
 import be.vdab.unit.Thermostat;
