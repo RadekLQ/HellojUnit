@@ -5,15 +5,19 @@ public class Temperature {
     private float temp;
 
     public Temperature(float temp) {
-        this.temp = temp;
+        this.setValue(temp);
     }
 
     public float getValue() {
         return temp;
     }
 
-    public void setValue(float temp) {
-        this.temp = temp;
+    public void setValue(float temp) throws InvalidTemperatureException{
+        if (temp < -273.15F) {
+            throw new InvalidTemperatureException("Deze temperatuur bestaat niet");
+        } else {
+            this.temp = temp;
+        }
     }
 
     public boolean isBoiling() {
