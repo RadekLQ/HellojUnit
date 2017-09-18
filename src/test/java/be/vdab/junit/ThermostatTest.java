@@ -22,6 +22,22 @@ public class ThermostatTest {
         }
     }
 
+
+//    FAKE MOCK
+
+//    class HeatingMock implements Heating {
+//
+//        private boolean status;
+//
+//        public void setHeating(boolean status) {
+//            this.status = status;
+//        }
+//
+//        public boolean isHeating() {
+//            return status;
+//        }
+//    }
+
     private Thermostat thermostat;
 
     @Before
