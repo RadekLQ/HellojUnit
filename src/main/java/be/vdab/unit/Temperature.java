@@ -3,8 +3,9 @@ package be.vdab.unit;
 public class Temperature {
 
     private float temp;
-    public Temperature(float temp) {
 
+    public Temperature(float temp) {
+        this.temp = temp;
     }
 
     public float getValue() {
@@ -16,12 +17,11 @@ public class Temperature {
     }
 
     public boolean isBoiling() {
-        return temp > 100;
-
+        return temp >= 100;
     }
 
     public boolean isFreezing() {
-        return temp <0;
+        return temp <= 0;
     }
 
     @Override
